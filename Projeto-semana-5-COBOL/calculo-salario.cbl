@@ -1,0 +1,50 @@
+IDENTIFICATION DIVISION.
+       PROGRAM-ID. CALCULO-SALARIO.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 NOME-FUNC       PIC X(30).
+       01 SALARIO-BASE    PIC 9(8)V99.
+       01 TEMPO-EMPRESA   PIC 9(2).
+       01 PERCENTUAL      PIC 9(3)V99.
+       01 VALOR-BONUS     PIC 9(8)V99.
+       01 SALARIO-FINAL   PIC 9(8)V99.
+
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           PERFORM ENTRADA-DADOS
+           PERFORM CALCULA-BONUS
+           PERFORM CALCULA-SALARIO
+           PERFORM EXIBE-RESULTADO
+           STOP RUN.
+
+       ENTRADA-DADOS.
+           DISPLAY "DIGITE O NOME DO FUNCIONARIO: "
+           ACCEPT NOME-FUNC
+           DISPLAY "DIGITE O SALARIO BASE: "
+           ACCEPT SALARIO-BASE
+           DISPLAY "DIGITE O TEMPO DE EMPRESA (ANOS): "
+           ACCEPT TEMPO-EMPRESA.
+
+       CALCULA-BONUS.
+           IF TEMPO-EMPRESA IS LESS THAN 1
+               COMPUTE PERCENTUAL = 0.05
+           ELSE
+               IF TEMPO-EMPRESA IS LESS THAN OR EQUAL TO 5
+                   COMPUTE PERCENTUAL = 0.10
+               ELSE
+                   COMPUTE PERCENTUAL = 0.15
+               END-IF
+           END-IF
+           COMPUTE VALOR-BONUS = SALARIO-BASE * PERCENTUAL.
+
+       CALCULA-SALARIO.
+           COMPUTE SALARIO-FINAL = SALARIO-BASE + VALOR-BONUS.
+
+       EXIBE-RESULTADO.
+           DISPLAY "------------------------------------"
+           DISPLAY "NOME: " NOME-FUNC
+           DISPLAY "SALARIO BASE: " SALARIO-BASE
+           DISPLAY "BONUS: " VALOR-BONUS
+           DISPLAY "SALARIO FINAL: " SALARIO-FINAL
+           DISPLAY "------------------------------------".
