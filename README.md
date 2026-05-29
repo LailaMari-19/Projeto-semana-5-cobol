@@ -5,18 +5,18 @@ Este projeto é uma aplicação desenvolvida em COBOL para o cálculo de bônus 
 ## Regras de Negócio
 O sistema recebe os dados de um funcionário e aplica as seguintes regras de bônus:
 
-Até 1 ano de empresa: 5% de bônus.
+* Até 1 ano de empresa: 5% de bônus.
 
-De 2 a 5 anos de empresa: 10% de bônus.
+* De 2 a 5 anos de empresa: 10% de bônus.
 
-Acima de 5 anos de empresa: 15% de bônus.
+* Acima de 5 anos de empresa: 15% de bônus.
 
 ## Funcionalidades
-Entrada de Dados: Leitura interativa via terminal (Nome, Salário Base e Tempo de Empresa).
+* Entrada de Dados: Leitura interativa via terminal (Nome, Salário Base e Tempo de Empresa).
 
-Modularização: O código é estruturado em parágrafos lógicos (ENTRADA-DADOS, CALCULA-BONUS, CALCULA-SALARIO, EXIBE-RESULTADO), garantindo a organização e a clareza do fluxo.
+* Modularização: O código é estruturado em parágrafos lógicos (ENTRADA-DADOS, CALCULA-BONUS, CALCULA-SALARIO, EXIBE-RESULTADO), garantindo a organização e a clareza do fluxo.
 
-Processamento: Implementação de lógica condicional (IF/ELSE) e cálculos aritméticos utilizando o comando COMPUTE.
+* Processamento: Implementação de lógica condicional (IF/ELSE) e cálculos aritméticos utilizando o comando COMPUTE.
 
 ## Tecnologia Utilizada
-Linguagem: COBOL
+* Linguagem: COBOL
